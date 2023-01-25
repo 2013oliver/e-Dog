@@ -1,9 +1,10 @@
 public class Dog {
     public int Age;
+	public static int c = 0;
     public  static String Name;
     public boolean Is_sit;
     public boolean Is_bowl_empty = true;
-    public boolean Is_dog_full;
+    public static boolean Is_dog_full;
 
     public Dog(int age,String name){
         Age = age;
@@ -22,13 +23,17 @@ public class Dog {
         System.out.println("你往" + Name + "的碗里装满了狗粮,可以让" + Name + "吃饭了.");
     }
 	public static class Play {
-		int c = 0,x;
+		int x;
 		public Play(int x){
 			this.x = x;
 		}
 		public void Ball(){
 			if (c >= 5) {
-				System.out.println(Name + "玩累了,下次再玩吧!");
+				if (Is_dog_full) {
+					System.out.println(Name + "玩累了,下次再玩吧!");
+				} else {
+					System.out.println(Name + "玩累了,给它吃东西可以恢复能量!");
+				}
 			} else {
 				c++;
 				System.out.println("你和" + Name + "玩球," +  Name + "很开心!!");
@@ -36,7 +41,11 @@ public class Dog {
 		}
 		public void Stuffed_Toy(){
 			if (c >= 5) {
-				System.out.println(Name + "玩累了,下次再玩吧!");
+				if (Is_dog_full) {
+					System.out.println(Name + "玩累了,下次再玩吧!");
+				} else {
+					System.out.println(Name + "玩累了,给它吃东西可以恢复能量!");
+				}
 			} else {
 				c++;
 				System.out.println(Name + "在玩毛绒玩具," + Name + "很开心!!");
@@ -52,6 +61,7 @@ public class Dog {
             Is_bowl_empty = true;
             System.out.println(Name + "吃饱了,它很开心.");
             Is_dog_full = true;
+			c = 0;
         }
     }
 
