@@ -1,7 +1,7 @@
 public class Dog {
     public int Age;
 	public static int c = 0;
-    public  static String Name;
+    public static String Name;
     public boolean Is_sit;
     public boolean Is_bowl_empty = true;
     public static boolean Is_dog_full;
