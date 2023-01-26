@@ -60,6 +60,7 @@ public class Dog_test {
 							System.out.println("余额不足!!");
 						} else {
 							my_dog.money -= t * 10;
+							my_dog.snack += t * 100;
 							System.out.println("成功购买.");
 						}
 					}
